@@ -1,4 +1,4 @@
-# Готовые лабы смотри в блоке releases
+# Готовые лабы смотри в блоке [releases](https://github.com/PheeZz/UnityBfuArch/releases)
 
 # Условия лаб
 
