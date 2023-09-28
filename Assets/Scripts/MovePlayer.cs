@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class move : MonoBehaviour
+public class MovePlayer : MonoBehaviour
 {
     private Rigidbody _rb;
     public float speed = 2.0f;
     private Vector3 _move_vector;
+    public Transform orientation;
 
     void Awake()
     {
@@ -23,11 +24,11 @@ public class move : MonoBehaviour
     void FixedUpdate()
     {
         // get input from user
-        float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical");
+        float horizontal = Input.GetAxisRaw("Horizontal");
+        float vertical = Input.GetAxisRaw("Vertical");
 
         // set move vector
-        this._move_vector = new Vector3(horizontal, 0.0f, vertical);
+        this._move_vector = (orientation.forward * vertical + orientation.right * horizontal).normalized;
 
         // move object
         this._rb.MovePosition(this._rb.position + this._move_vector * this.speed * Time.deltaTime);

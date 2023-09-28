@@ -5,7 +5,6 @@ using UnityEngine;
 public class DecreaceHP : MonoBehaviour
 {
     // Start is called before the first frame update
-    private int _hp = 100;
     private Player player;
 
     void Start() { }
