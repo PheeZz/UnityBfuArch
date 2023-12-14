@@ -30,7 +30,7 @@ public class MoveCamera : MonoBehaviour
         yRotation += xSpeed;
 
         // clamp rotation
-        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+        xRotation = Mathf.Clamp(xRotation, -60f, 60f);
 
         // rotate camera
         transform.rotation = Quaternion.Euler(xRotation, yRotation, 0f);
